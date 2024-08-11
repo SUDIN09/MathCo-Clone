@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+/* Header Styles for Services Page */
+
+
+header .back-home-arrow {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1001;
+}
+
+header .back-home-arrow:hover {
+    background-color: #555;
+    transform: scale(1.2);
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.services-section {
+    padding: 50px;
+    background: linear-gradient(270deg, #ff6b6b, #f06595, #845ef7, #5c7cfa, #339af0);
+    background-size: 1000% 1000%;
+    animation: gradientBackground 10s ease infinite;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s ease, border-radius 0.5s ease, background-color 0.5s ease;
+    cursor: pointer;
+}
+
+/* Different background colors for each service card */
+#service1 {
+    background-color: #ff6b6b; /* Red */
+}
+
+#service2 {
+    background-color: #f06595; /* Pink */
+}
+
+#service3 {
+    background-color: #845ef7; /* Purple */
+}
+
+/* Hover effect */
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+/* Dynamic shape transformation */
+.service-card.circle {
+    border-radius: 50%;
+    background-color: #fff;
+    color: #333;
+}
+
+.service-card.circle h2,
+.service-card.circle p {
+    color: #333;
+}
+

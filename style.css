@@ -1,0 +1,329 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+header:hover {
+    background-color: #444;
+    padding: 15px 0;
+}
+
+header .logo {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header .logo:hover {
+    color: #28a745;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+/* Hero Section with Animated Gradient Background */
+#hero {
+    background: linear-gradient(135deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400% 400%;
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInDown 1s forwards 0.5s;
+}
+
+#hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInDown 1s forwards 1s;
+}
+
+#hero .btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: fadeInDown 1s forwards 1.5s;
+}
+
+#hero .btn:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Our Services Section */
+.section-padding {
+    padding: 60px 0;
+}
+
+#services .service-list {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    gap: 20px;
+    overflow: hidden;
+}
+
+#services .service-item {
+    background: linear-gradient(135deg, #ff6b6b, #f06595);
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
+}
+
+#services .service-item:nth-child(2) {
+    background: linear-gradient(135deg, #845ef7, #5c7cfa);
+}
+
+#services .service-item:nth-child(3) {
+    background: linear-gradient(135deg, #339af0, #22b8cf);
+}
+
+#services .service-item:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+#services .service-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transform: scale(0);
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+
+#services .service-item:hover::before {
+    transform: scale(1);
+}
+
+#services .service-item .service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.4s ease;
+}
+
+#services .service-item:hover .service-icon {
+    color: #fff;
+}
+
+#services .service-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+#services .service-item p {
+    font-size: 16px;
+    z-index: 1;
+    position: relative;
+}
+
+/* About Section */
+#about {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(40, 167, 69, 0.2);
+    z-index: -1;
+    animation: slideIn 4s infinite;
+}
+
+@keyframes slideIn {
+    0%, 100% { left: -100%; }
+    50% { left: 100%; }
+}
+
+/* Testimonials Section */
+#testimonials {
+    text-align: center;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+    animation: pulseAnimation 6s infinite;
+    z-index: -1;
+}
+
+@keyframes pulseAnimation {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+}
+
+#testimonials .testimonial-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+#testimonials .testimonial-item {
+    width: 45%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    font-style: italic;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#testimonials .testimonial-item:hover {
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+#testimonials .testimonial-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transform: scale(0);
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+
+#testimonials .testimonial-item:hover::before {
+    transform: scale(1);
+}
+
+#testimonials .testimonial-item p {
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    color: #333;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+    z-index: -1;
+}
